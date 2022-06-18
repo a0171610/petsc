@@ -16,6 +16,7 @@ contains
     call PetscInitialize(PETSC_NULL_CHARACTER, ierr)
     call transform_to_petsc_matrix(A, At, n)
     call transform_to_petsc_vector(b, bt, n)
+    call transform_to_petsc_vector(x, xt, n)
     call solve(At, xt, bt)
   end subroutine solve_linear_equation
 

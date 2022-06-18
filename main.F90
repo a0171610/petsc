@@ -15,6 +15,7 @@ program main
   A(3, 3) = 2.0d0
 
   b(:) = 1.0d0
+  x(:) = 0.0d0
 
   call solve_linear_equation(A, x, b, n)
   
