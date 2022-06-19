@@ -12,12 +12,15 @@ contains
     real(8), intent(out) :: x(n)
     Mat :: At
     Vec :: xt, bt
+    PetscScalar, pointer :: x_p(:)
 
     call PetscInitialize(PETSC_NULL_CHARACTER, ierr)
     call transform_to_petsc_matrix(A, At, n)
     call transform_to_petsc_vector(b, bt, n)
     call transform_to_petsc_vector(x, xt, n)
     call solve(At, xt, bt)
+    call VecGetArrayF90(xt, x_p, ierr)
+    x(:) = x_p(:)
   end subroutine solve_linear_equation
 
   subroutine transform_to_petsc_matrix(A, At, n)
