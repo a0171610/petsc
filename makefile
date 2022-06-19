@@ -5,6 +5,8 @@ FFLAGS=-Wl,-bind_at_load -Wl,-multiply_defined,suppress -Wl,-multiply_defined -W
 #this 'CPPFLAGS' is include option 
 CPPFLAGS=-I/Users/okazakikouhei/petsc/include -I/Users/okazakikouhei/petsc/arch-darwin-c-debug/include
 LDFLAGS=-Wl,-rpath,/Users/okazakikouhei/petsc/arch-darwin-c-debug/lib -L/Users/okazakikouhei/petsc/arch-darwin-c-debug/lib -Wl,-rpath,/Users/okazakikouhei/petsc/arch-darwin-c-debug/lib -L/Users/okazakikouhei/petsc/arch-darwin-c-debug/lib
+#CPPFLAGS=-I/usr/local/Cellar/petsc/3.17.2/include
+#LDFLAGS=-L/usr/local/Cellar/petsc/3.17.2/lib
 LDLIBS=-lpetsc -lm
 
 .SUFFIXES :
